@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Mon App</string>
     <string name="welcome_message">Soyez le bienvenue</string>
+    <string name="clickbtn">Cliquez</string>
 </resources>

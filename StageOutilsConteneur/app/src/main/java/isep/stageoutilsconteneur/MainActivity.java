@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -61,5 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return true;
+    }
+//test debug;
+    public void clickHandler(View view) {
+        int j=0;
+        for (int i = 0; i <10 ; i++) {
+            j=i;
+            i=j+i;
+        }
     }
 }
