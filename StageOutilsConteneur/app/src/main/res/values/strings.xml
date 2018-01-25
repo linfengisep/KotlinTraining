@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google_maps_api_key">AIzaSyBQjlh_TCduQPwf_R_TRYZ2-HHWcZB2Ml8</string>
+    <!-- Customize your theme here. -->
+    <string name="app_name">My App</string>
+    <string name="welcome_message">welcome</string>
+    <string name="clickbtn">Click me</string>
+</resources>
