@@ -12,7 +12,7 @@ import isep.stageoutilsconteneur.helper.LocaleHelper;
 public class MainApplication extends Application{
     @Override
     protected void attachBaseContext(Context base) {
-        super.attachBaseContext(LocaleHelper.onAttach(base,"en"));
-
+        super.attachBaseContext(LocaleHelper.onAttach(base,"fr"));
     }
+
 }
