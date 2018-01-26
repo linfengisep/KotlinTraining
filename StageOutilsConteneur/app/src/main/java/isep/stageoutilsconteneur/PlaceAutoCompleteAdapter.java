@@ -8,12 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.data.DataBufferUtils;
-import com.google.android.gms.drive.query.Filter;
 import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.AutocompletePrediction;
 import com.google.android.gms.location.places.AutocompletePredictionBufferResponse;
@@ -48,11 +48,6 @@ public class PlaceAutoCompleteAdapter extends ArrayAdapter<AutocompletePredictio
     // The autocomplete filter used to restrict queries to a specific set of place types.
     private AutocompleteFilter mPlaceFilter;
 
-    /**
-     * Initializes with a resource for text rows and autocomplete query bounds.
-     *
-     * @see android.widget.ArrayAdapter#ArrayAdapter(android.content.Context, int)
-     */
     public PlaceAutoCompleteAdapter(Context context, GeoDataClient geoDataClient,
                                     LatLngBounds bounds, AutocompleteFilter filter) {
         super(context, android.R.layout.simple_expandable_list_item_2, android.R.id.text1);
@@ -61,24 +56,20 @@ public class PlaceAutoCompleteAdapter extends ArrayAdapter<AutocompletePredictio
         mPlaceFilter = filter;
     }
 
-    /**
-     * Sets the bounds for all subsequent queries.
-     */
+    //Sets the bounds for all subsequent queries.
     public void setBounds(LatLngBounds bounds) {
         mBounds = bounds;
     }
 
-    /**
-     * Returns the number of results received in the last autocomplete query.
-     */
+    // Returns the number of results received in the last autocomplete query.
+
     @Override
     public int getCount() {
         return mResultList.size();
     }
 
-    /**
-     * Returns an item from the last autocomplete query.
-     */
+    //Returns an item from the last autocomplete query.
+
     @Override
     public AutocompletePrediction getItem(int position) {
         return mResultList.get(position);
@@ -87,10 +78,6 @@ public class PlaceAutoCompleteAdapter extends ArrayAdapter<AutocompletePredictio
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = super.getView(position, convertView, parent);
-
-        // Sets the primary and secondary text for a row.
-        // Note that getPrimaryText() and getSecondaryText() return a CharSequence that may contain
-        // styling based on the given CharacterStyle.
 
         AutocompletePrediction item = getItem(position);
 
@@ -102,9 +89,7 @@ public class PlaceAutoCompleteAdapter extends ArrayAdapter<AutocompletePredictio
         return row;
     }
 
-    /**
-     * Returns the filter for the current set of autocomplete results.
-     */
+    //Returns the filter for the current set of autocomplete results.
     @Override
     public Filter getFilter() {
         return new Filter() {
